@@ -18,6 +18,7 @@ public class rotatearray {
     // brute force for the rotate in k steps , In this question you just need to understand that if the array rotates number of steps equal to the length of arrayy then it will become the same array as before. So' always take remainder before rotating an array cause it will make problem easy 
 
     public static void rotate2(int arr[], int k){
+        // brute force
         k = k%arr.length;
          if(k== 0){
             System.out.println(Arrays.toString(arr));
@@ -38,13 +39,14 @@ public class rotatearray {
         }
         System.out.println(Arrays.toString(arr));
 
-        
-        for(int i=k;i<arr.length;i++){
-            arr[i] = y.get(i-k);
-           
+        int j = 0;
+        for(int i=arr.length-k;i<arr.length;i++){
+            arr[i] = y.get(j);
+           j++;
         }
         System.out.print(Arrays.toString(arr));
-    }  } // brute force
+    }  } 
+    // if interview ask you to give the optimal solution then , reverse arrey from 0 to d then again reverse it from d+1 to n after doing that just reverse whole aray then you will get the answer easily which will be rotated in the k steps as demanded 
  
     public static void main(String args[]){
         int arr[] = {2,4,5,9,1,0};
