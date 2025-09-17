@@ -1,5 +1,32 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+// this question has two edge cases where the 1st is there no zero element in the array or have only one element in all array
+// class Solution {
+//     public void moveZeroes(int[] nums) {
+//         if(nums.length>1){
+//         int i = -1;
+//         int j = 0;
+//         for(int k =0; k<nums.length; k++){
+//             if(nums[k]==0){
+//                 i = k;
+//                 j= k+1;
+//                 break;
+//             }
+//         }
+//         if(i>=0){
+//         for(int l = j; l<nums.length;l++){
+//             if(nums[l]!=0){
+//                 int temp = nums[l];
+//                 nums[l] = nums[i];
+//                 nums[i] = temp;
+//                 i++;
+//             }
+//         }
+//         }
+//         }
+        
+//     }
+// }
 
 public class movezero {
     public static void main(String args[]){
