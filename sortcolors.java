@@ -1,5 +1,5 @@
 import java.util.Arrays;
-
+// this is the optimal approch for solving this question 
 public class sortcolors {
     public static void col(int arr[]){
         int n = arr.length;
