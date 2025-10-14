@@ -32,11 +32,39 @@ public class majorelement {
         }
         return 0;
 
+    };
+    // optimal solution with the TC of O(2N) which less then the order Hashmap solution
+    public static int major3(int arr[]){
+        int el =0 ;
+        int count =0; 
+        for(int i =0; i<arr.length; i++){
+            if(count ==0){
+                el = arr[i];
+                count++;
+            }
+            else if(el == arr[i]){
+                count++;
+            }
+            else{
+                count--;
+            }
+        }
+        int num = 0;
+        for(int i =0; i<arr.length; i++){
+            if(arr[i]==el){
+                num++;
+            }
+        }
+        if(num>arr.length/2 ){
+            return el;
+        }
+        return 0;
     }
+
     public static void main(String args[]){
-        int arr[] = {1,2,5,1,4,6,3,2,1,4,7,8,9,5,4,1,1,1,1,1,1,1,1,1,1,1,1,};
+        int arr[] = {1,5,1,1,2,1};
         System.out.println(arr.length);
-        System.out.println(major2(arr));
+        System.out.println(major3(arr));
     }
     
 }
