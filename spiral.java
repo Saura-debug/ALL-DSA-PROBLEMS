@@ -1,5 +1,9 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class spiral {
     public static void spiral(int matrix[][]) {
+        ArrayList<Integer> you = new ArrayList<>();
         int startRow = 0;
         int endRow = matrix.length-1;
         int startcol =0;
@@ -7,15 +11,18 @@ public class spiral {
         while(startRow <= endRow && startcol <=endcol) {
             for(int i = startcol; i <= endcol; i++) {
                 System.out.print(matrix[startRow][i]+"");
+                you.add(matrix[startRow][i]);
             }
         for (int j = startRow +1; j<=endRow; j++) {
             System.out.print(matrix[j][endcol]+"");
+            you.add(matrix[j][endcol]);
         }
         for (int i = endcol-1; i>=startcol; i--){
             if(i == endcol) {
                 break;
             } 
             System.out.print(matrix[endRow][i]);
+            you.add(matrix[endRow][i]);
         }
         for (int j = endRow-1; j >=startRow; j--) {
             if(j  == startRow) {
@@ -23,6 +30,7 @@ public class spiral {
 
             }
             System.out.print(matrix[j][startcol]);
+            you.add(matrix[j][startcol]);
 
         }
         startRow++;
@@ -31,6 +39,7 @@ public class spiral {
         endcol--;
         
         }
+        System.out.println(you);
     }
     public static void main (String args[]) {
         int matrix[][] = {
