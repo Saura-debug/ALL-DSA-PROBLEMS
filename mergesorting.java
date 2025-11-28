@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.*;
 public class mergesorting {
+    
     // In this sorting technic we just place the pivot at  its original place and put all the larger elements from the pivot to left and otherwise we put element at the left 
 
     public static void sort(int arr[],int low, int high){
