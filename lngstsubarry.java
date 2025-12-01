@@ -1,5 +1,5 @@
 import java.util.HashMap;
-// i will revist this question tomorrow 
+// i will revist this question after the end-sem
 
 public class lngstsubarry {
     public static void longest(int arr[]){
