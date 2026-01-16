@@ -223,6 +223,67 @@ public class Linkedlist {
     }
     return false;
    }
+   public static Node midd(Node head){
+    Node slow = head;
+    Node fast = head.next;
+    while(fast != null && fast.next != null){
+        slow = slow.next;
+        fast = fast.next.next;
+}
+return slow;
+   }
+   public static Node merge(Node head1,Node head2){
+    Node newll = new Node(-1);
+    Node temp = newll;
+    while (head1 != null && head2 != null) {
+        if(head1.data <= head2.data){
+            temp.next = head1;
+            head1 = head1.next;
+            temp = temp.next;
+        }
+        else {
+            temp.next = head2;
+            head2 = head2.next;
+            temp = temp.next;
+        }
+        
+    }
+    while (head1 != null) {
+        temp.next = head1;
+            head1 = head1.next;
+            temp = temp.next;
+
+        
+    }
+    while (head2 != null) {
+          temp.next = head2;
+            head2 = head2.next;
+            temp = temp.next;
+
+        
+    }
+    return newll.next;
+
+
+   }
+   public static Node tt(Node head){
+    if(head == null || head.next == null){
+        return head;
+    }
+   Node mid = midd(head);
+   Node rightside = mid.next;
+   mid.next = null;
+   Node newleft = tt(head);
+   Node newright = tt(rightside);
+   return merge(newleft, newright);
+
+    
+
+
+
+   }
+
+   
 
     public static void main(String args[]){
       Linkedlist ll = new Linkedlist();
@@ -236,10 +297,11 @@ public class Linkedlist {
       ll.addlast(8);
    
       ll.addlast(0);
-      System.out.println(iscylic());
+     ll.print();
+    
      
     
-      System.out.println(ll.size);
+     
     }
 
     
