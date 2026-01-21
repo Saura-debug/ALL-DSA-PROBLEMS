@@ -8,6 +8,9 @@ public class findNthroot {
             
             for(int i = 1; i<=n; i++){
                 pro*=mid;
+                if(pro>m){
+                    break;
+                }
             }
             if(pro == m){
                 return mid;
