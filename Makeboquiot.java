@@ -30,7 +30,7 @@ public class Makeboquiot {
     public static int bouquet1(int arr[],int m,int n ,int high,int low){
        int boqtt = Integer.MAX_VALUE;
 
-         while (low<=high) {
+         while (low<=high) {class smdfrth
         int count = 0; 
         int boq = 0; 
         int mid = low + high-low/2;

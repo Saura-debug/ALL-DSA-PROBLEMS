@@ -283,6 +283,43 @@ return slow;
 
    }
 
+   // zig zag question for the ll
+   public static void Zigzag(){
+    Node slow = head;
+    Node fast = head.next;
+    while(fast != null || fast.next != null){
+        slow = slow.next;
+        fast = fast.next.next;
+
+    }
+    Node mid = slow;
+    Node curr = mid.next;
+    mid.next = null;
+    Node prev = null;
+    Node next;
+    while(curr !=null){
+        next = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = next;
+    }
+    Node lefthead = head;
+    Node righthead = prev;
+    Node nextl,nextr;
+    while (lefthead != null && righthead != null) {
+        nextl = lefthead.next;
+        lefthead.next = righthead;
+        nextr = righthead.next;
+        righthead.next = nextl;
+        righthead = nextr;
+        
+        lefthead = nextl;
+        
+    }
+    
+
+   }
+
    
 
     public static void main(String args[]){
